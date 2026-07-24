@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["node"],
+    "rootDir": ".",
+    "outDir": ".test-dist",
+    "noEmit": false
+  },
+  "include": [
+    "tests/**/*.ts",
+    "src/app.d.ts",
+    "src/lib/settings/hotkey.ts",
+    "src/lib/settings/model.ts",
+    "src/lib/settings/retry.ts",
+    "src/lib/settings/SettingsSaveQueue.ts",
+    "src/lib/constants/models.ts",
+    "src/lib/utils/accentTheme.ts",
+    "src/lib/components/widgetLayout.ts",
+    "src/lib/history/storage.ts",
+    "src/lib/types/history.ts"
+  ]
+}

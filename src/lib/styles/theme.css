@@ -1,0 +1,310 @@
+/* Dicta Design System - Premium Windows Desktop / Quiet Precision */
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  /* Typography Stack */
+  --font-sans: 'Inter', 'Segoe UI Variable Text', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-mono: 'Cascadia Code', 'Consolas', 'SF Mono', monospace;
+
+  /* Typography Scale */
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 15px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  /* Spacing Grid Tokens (4px Base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Sizing & Layout Tokens */
+  --control-height: 36px;
+  --control-height-sm: 32px;
+  --topbar-height: 44px;
+  --sidebar-width: 280px;
+
+  /* Border Radii Tokens (Strict Guidelines: 8px controls, 12px cards/popovers) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-control: 8px;
+  --radius-md: 8px;
+  --radius-card: 12px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-popover: 0 10px 28px rgba(0, 0, 0, 0.16);
+
+  /* Transitions */
+  --transition-fast: 100ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Semantic Accent Tokens */
+  --accent-primary: var(--accent-color, #5B5FEF);
+  --accent-soft: var(--accent-light, rgba(91, 95, 239, 0.10));
+  --accent-border: var(--accent-glow, rgba(91, 95, 239, 0.20));
+  --accent-foreground: #FFFFFF;
+  --accent-hover: var(--accent-hover-color, #4B4FEB);
+  --focus-ring: var(--border-focus, #5B5FEF);
+}
+
+/* Light Theme - Clean, Airy, High Precision */
+.theme-light, :root:not(.theme-dark) {
+  --bg-app: #F5F6F8;
+  --bg-sidebar: #FAFAFB;
+  --bg-panel: #FAFAFB;
+  --bg-surface: #FFFFFF;
+  --surface-color: #FFFFFF;
+  --bg-surface-raised: #FFFFFF;
+  --secondary-bg: #F0F1F4;
+  --tertiary-bg: #E4E6EA;
+  --editor-bg: #FFFFFF;
+  --bg-control: #F0F1F4;
+  --nested-control-bg: #F0F1F4;
+  --hover-bg: rgba(0, 0, 0, 0.04);
+  --hover-surface: #E4E6EA;
+  --active-bg: rgba(0, 0, 0, 0.07);
+
+  --text-primary: #15171A;
+  --main-text: #15171A;
+  --text-secondary: #6E737D;
+  --sec-text: #6E737D;
+  --text-tertiary: #9DA2AC;
+  --tertiary-text: #9DA2AC;
+
+  --border-color: #E2E4E8;
+  --border-subtle: #ECEEF2;
+  --border-strong: #D1D5DB;
+  --border-focus: var(--accent-color, #5B5FEF);
+  --focus-ring-color: var(--accent-color, #5B5FEF);
+
+  --success-color: #24A164;
+  --success-bg: rgba(36, 161, 100, 0.09);
+  --success-border: rgba(36, 161, 100, 0.22);
+
+  --danger-color: #E5484D;
+  --error-color: #E5484D;
+  --danger-bg: rgba(229, 72, 77, 0.09);
+  --error-bg: rgba(229, 72, 77, 0.09);
+  --danger-border: rgba(229, 72, 77, 0.22);
+
+  --warning-color: #D97706;
+  --warning-bg: rgba(217, 119, 6, 0.09);
+
+  --input-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --badge-bg: #EDEEF2;
+  --accent-text: var(--accent-text-light, var(--accent-primary, #5B5FEF));
+}
+
+/* Dark Theme - 5-Level Quiet Precision Surface Architecture & Neutral Gray Contrast */
+.theme-dark {
+  --accent-text: var(--accent-text-dark, var(--accent-primary, #8F92F4));
+  /* Level 1: Main window & workspace background (Darkest level) */
+  --bg-app: #0F1115;
+
+  /* Level 2: Sidebars and system panels */
+  --bg-sidebar: #14161B;
+  --bg-panel: #14161B;
+  --secondary-bg: #14161B;
+
+  /* Level 3: Editor, text surfaces, and cards (1 level lighter than workspace background) */
+  --bg-surface: #191C23;
+  --surface-color: #191C23;
+  --bg-surface-raised: #191C23;
+  --card-bg: #191C23;
+  --editor-bg: #191C23;
+  --tertiary-bg: #191C23;
+
+  /* Level 4: Control inputs, buttons, segmented control (Separate nested surface) */
+  --bg-control: #1F232B;
+  --input-bg: #1F232B;
+  --nested-control-bg: #1F232B;
+  --badge-bg: #1F232B;
+
+  /* Level 5: Hover and active states (Slightly lighter than default) */
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --hover-surface: #252A34;
+  --active-bg: #292E3A;
+
+  /* Neutral Typography System (Neutral grays, NO cold blue-gray tint) */
+  --text-primary: #E5E7EB;
+  --main-text: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --sec-text: #9CA3AF;
+  --text-tertiary: #717784;
+  --tertiary-text: #717784;
+  --text-disabled: #4B505D;
+
+  /* Weak Neutral Borders (No bright glowing grid) */
+  --border-color: #242830;
+  --border-subtle: #1D2027;
+  --border-strong: #2E333F;
+  --border-focus: var(--accent-color, #5B5FEF);
+  --focus-ring-color: var(--accent-color, #5B5FEF);
+
+  /* Semantic Status Indicators */
+  --success-color: #2EBE78;
+  --success-bg: rgba(46, 190, 120, 0.10);
+  --success-border: rgba(46, 190, 120, 0.25);
+
+  --danger-color: #EF4444;
+  --error-color: #EF4444;
+  --danger-bg: rgba(239, 68, 68, 0.10);
+  --error-bg: rgba(239, 68, 68, 0.10);
+  --danger-border: rgba(239, 68, 68, 0.25);
+
+  --warning-color: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.10);
+  --warning-border: rgba(245, 158, 11, 0.25);
+
+  /* Soft Elevation Shadows (Only for floating popovers, menus & modals) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-popover: 0 10px 28px rgba(0, 0, 0, 0.60);
+}
+
+/* Global Reset & Base Layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+
+/* Typography Utility Classes */
+.page-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.section-title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.body-text {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.secondary-text {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.metadata-text {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+/* Tabular Numeric Utilities for Timers & Counters */
+.tnum, [data-tnum] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Custom Minimal Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Accessible Focus Ring System */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[role="button"]:focus,
+[role="option"]:focus,
+[role="radio"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+[role="option"]:focus:not(:focus-visible),
+[role="radio"]:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[role="option"]:focus-visible,
+[role="radio"]:focus-visible {
+  outline: none !important;
+  border-color: var(--focus-ring, var(--border-focus, #5B5FEF)) !important;
+  box-shadow: 0 0 0 1px var(--focus-ring, var(--border-focus, #5B5FEF)) !important;
+}
+
+/* Native-feel Tooltips */
+[title] {
+  position: relative;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
