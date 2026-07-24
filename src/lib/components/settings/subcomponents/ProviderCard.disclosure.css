@@ -1,0 +1,233 @@
+@scope (.provider-row) {
+  .error-detail-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 20px 14px 20px;
+    padding: 8px 12px;
+    background: var(--danger-bg, rgba(239, 68, 68, 0.10));
+    color: var(--danger-color, #EF4444);
+    border-radius: var(--radius-sm, 6px);
+    font-size: 12px;
+    line-height: 16px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .error-detail-bar span {
+    min-width: 0;
+  }
+
+  .error-detail-bar svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Inline Disclosure Panel */
+  .inline-disclosure-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+    margin: 0 20px 16px 20px;
+    background: var(--bg-control, #1F232B);
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-color, #242830);
+  }
+
+  .disclosure-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .disclosure-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #E5E7EB);
+  }
+
+  .format-helper-text {
+    font-size: 11.5px;
+    color: var(--text-tertiary, #717784);
+  }
+
+  .input-with-mask-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .disclosure-key-input {
+    flex: 1;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: var(--radius-control, 8px);
+    border: 1px solid var(--border-color, #242830);
+    background: var(--bg-surface, #191C23);
+    color: var(--text-primary, #E5E7EB);
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    outline: none;
+    transition: border-color 120ms ease;
+  }
+
+  .disclosure-key-input:focus {
+    border-color: var(--accent-color, #5B5FEF);
+    box-shadow: 0 0 0 2px rgba(91, 95, 239, 0.15);
+  }
+
+  .btn-toggle-mask {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: var(--radius-control, 8px);
+    border: 1px solid var(--border-color, #242830);
+    background: var(--bg-surface, #191C23);
+    color: var(--text-secondary, #9CA3AF);
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .btn-toggle-mask svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn-toggle-mask:hover {
+    color: var(--text-primary, #E5E7EB);
+  }
+
+  .disclosure-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Confirm Delete Overlay */
+  .inline-confirm-overlay {
+    padding: 14px 16px;
+    margin: 0 20px 16px 20px;
+    background: var(--danger-bg, rgba(239, 68, 68, 0.10));
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--danger-border, rgba(239, 68, 68, 0.25));
+  }
+
+  .confirm-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .confirm-text-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--danger-color, #EF4444);
+  }
+
+  .confirm-text-group svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .confirm-text-group strong {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+    color: var(--text-primary, #E5E7EB);
+  }
+
+  .confirm-text-group p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 16px;
+    color: var(--text-secondary, #9CA3AF);
+  }
+
+  .confirm-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 640px) {
+    .provider-main-row {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      height: auto;
+      min-height: 0;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+
+    .col-status, .col-key, .col-action, .col-menu {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 760px) {
+    .provider-main-row {
+      grid-template-columns: 148px minmax(64px, 1fr) 88px 28px;
+      grid-template-areas:
+        "info info info info"
+        "status key action menu";
+      gap: 10px 8px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .provider-info-group {
+      grid-area: info;
+    }
+
+    .col-status {
+      grid-area: status;
+      width: 148px;
+      min-width: 148px;
+      max-width: 148px;
+    }
+
+    .col-status .status-badge {
+      width: 148px;
+      min-width: 148px;
+      max-width: 148px;
+    }
+
+    .col-key {
+      grid-area: key;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+
+    .col-action {
+      grid-area: action;
+      width: 88px;
+      min-width: 88px;
+      max-width: 88px;
+    }
+
+    .col-action .btn-row {
+      width: 88px;
+      min-width: 88px;
+      max-width: 88px;
+    }
+
+    .col-menu {
+      grid-area: menu;
+      width: 28px;
+      min-width: 28px;
+      max-width: 28px;
+    }
+  }
+}
